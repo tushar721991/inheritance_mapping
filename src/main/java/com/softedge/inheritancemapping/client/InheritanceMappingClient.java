@@ -17,12 +17,13 @@ public class InheritanceMappingClient {
 		SessionFactory factory = SessionFactoryProvider.getSessionFactory();
 		Session session = factory.openSession();
 		
-//		Payment payment = new ChequePayment(101, LocalDate.now(), "Vodafone Bill", 240.0, 12456, "Order");
+		Payment payment1 = new ChequePayment(103, LocalDate.now(), "Vodafone Bill", 240.0, 12456, "Order");
 
-		Payment payment = new CardPayment(101, LocalDate.now(), "Internet Bill", 240.0, 1234567812345678l, "VISA", 12, 2020);
+		Payment payment2 = new CardPayment(101, LocalDate.now(), "Internet Bill", 240.0, 1234567812345678l, "VISA", 12, 2020);
 		Transaction tx = session.beginTransaction();
 		
-		session.save(payment);
+		session.save(payment1);
+		session.save(payment2);
 		tx.commit();
 		session.close();
 		factory.close();

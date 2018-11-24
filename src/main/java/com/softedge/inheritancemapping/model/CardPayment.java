@@ -2,9 +2,11 @@ package com.softedge.inheritancemapping.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
+//@DiscriminatorValue("card")
 public class CardPayment extends Payment {
 
 	private long cardNumber;
